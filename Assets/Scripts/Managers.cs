@@ -11,7 +11,12 @@ public class Managers : MonoBehaviour
 
     #region Managers
     private GameManager _game = new GameManager();
+    private UIManager _uiManager = new UIManager();
+    private DataManager _dataManager = new DataManager();
     public static GameManager Game { get { return Instance._game; } }
+    public static UIManager UI { get { return Instance._uiManager; } }
+    public static DataManager Data { get { return Instance._dataManager; } } 
+
     #endregion
 
     private void Start()
@@ -33,8 +38,9 @@ public class Managers : MonoBehaviour
             DontDestroyOnLoad(go);
             instance = go.GetComponent<Managers>();
 
-            //Data.Init();
             Game.Init();
+            Data.Init();
+            UI.Init();
         }
     }
 
