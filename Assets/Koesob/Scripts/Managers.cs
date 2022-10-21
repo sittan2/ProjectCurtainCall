@@ -9,7 +9,7 @@ public class Managers : MonoBehaviour
     {
         get
         {
-            if(instance == null)
+            if (instance == null)
             {
                 return null;
             }
@@ -19,7 +19,22 @@ public class Managers : MonoBehaviour
     }
 
     #region Managers
+    private GameManager _game = new GameManager();
+    public static GameManager Game { get { return Instance._game; } }
     #endregion
 
+    private void Awake()
+    {
 
+    }
+
+    private void Init()
+    {
+
+    }
+
+    private void Clear()
+    {
+
+    }
 }
