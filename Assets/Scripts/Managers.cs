@@ -32,7 +32,9 @@ public class Managers : MonoBehaviour
 
             DontDestroyOnLoad(go);
             instance = go.GetComponent<Managers>();
+
             //Data.Init();
+            Game.Init();
         }
     }
 
