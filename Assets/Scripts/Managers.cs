@@ -10,7 +10,7 @@ public class Managers : MonoBehaviour
     public static Managers Instance { get { return instance; } }
 
     #region Managers
-    private GameManager _game = new GameManager();
+    [SerializeField] private GameManager _game;
     public static GameManager Game { get { return Instance._game; } }
     #endregion
 
