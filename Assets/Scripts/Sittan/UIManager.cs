@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UIManager
 {
+    [SerializeField] GameObject taskPrefab;
+
     public void Init()
     {
         
     }
-
-
 }
