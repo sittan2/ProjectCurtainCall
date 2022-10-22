@@ -32,11 +32,15 @@ public class GameManager : MonoBehaviour
         //    Managers.Scene.StartEndScene(false);
         //}
     }
-    public void IncreaseViewer(int _amount)
+    public void IncreaseViewer(int _amount, bool isPerfect = false)
     {
         viewer += _amount;
         viewer += combo;
-        combo++;
+
+        if (isPerfect)
+            combo++;
+        else
+            combo = 0;
     }
 
     public void DecreaseVeiwer(int _amount)
