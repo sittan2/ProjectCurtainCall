@@ -5,6 +5,12 @@ using UnityEngine;
 public class PropCamera : Prop
 {
     public List<Vector3> rotations;
+    private Camera camera;
+
+    private void Start()
+    {
+        camera = GetComponent<Camera>();
+    }
 
     private void Update()
     {
@@ -13,16 +19,18 @@ public class PropCamera : Prop
 
     public void ZoomIn()
     {
-        var position = gameObject.transform.position;
+        var view = camera.fieldOfView;
 
-        position.z += 2;
-
-        if (position.z >= -1)
+        if(view - 10 <= 30)
         {
-            position.z = -1;
+            view = 30;
+        }
+        else
+        {
+            view -= 10;
         }
 
-        gameObject.transform.position = position;
+        camera.fieldOfView = view;
 
         string command = type + "_" + number + "_" + Define.ActionType.Zoom + "_" + "0";
 
@@ -31,16 +39,18 @@ public class PropCamera : Prop
 
     public void ZoomOut()
     {
-        var position = gameObject.transform.position;
+        var view = camera.fieldOfView;
 
-        position.z -= 2;
-
-        if (position.z <= -13)
+        if (view + 10 >= 60)
         {
-            position.z = -13;
+            view = 60;
+        }
+        else
+        {
+            view += 10;
         }
 
-        gameObject.transform.position = position;
+        camera.fieldOfView = view;
 
         string command = type + "_" + number + "_" + Define.ActionType.Zoom + "_" + "1";
 

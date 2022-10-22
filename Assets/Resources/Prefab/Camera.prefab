@@ -278,7 +278,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  commandName: ZoomOut
+  commandName: "\uC90C \uC544\uC6C3"
 --- !u!114 &2038577890422038630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  commandName: ZoomIn
+  commandName: "\uC90C \uC778"
 --- !u!114 &8201972980036881333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -350,7 +350,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  commandName: MoveToOne
+  commandName: "A\uB85C \uC774\uB3D9"
 --- !u!114 &4961330020044958352
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -378,7 +378,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  commandName: MoveToTwo
+  commandName: "B\uB85C \uC774\uB3D9"
 --- !u!114 &6215234820949626502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,7 +406,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  commandName: MoveToThree
+  commandName: "C\uB85C \uC774\uB3D9"
 --- !u!114 &5143730171598161728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  commandName: On
+  commandName: "\uCF1C\uAE30"
 --- !u!114 &8329796575195968081
 MonoBehaviour:
   m_ObjectHideFlags: 0
