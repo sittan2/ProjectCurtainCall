@@ -14,7 +14,7 @@ public class PropCamera : Prop
 
     private void Update()
     {
-        transform.LookAt(new Vector3(0, 0,5));
+        transform.LookAt(new Vector3(0, 2,8));
     }
 
     public void ZoomIn()

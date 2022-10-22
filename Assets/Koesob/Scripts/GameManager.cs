@@ -19,19 +19,6 @@ public class GameManager : MonoBehaviour
         curtain.SetActive(false);
     }
 
-
-    private void Update()
-    {
-        //if(Input.GetKeyDown(KeyCode.A))
-        //{
-        //    Managers.Scene.StartEndScene(true);
-        //}
-
-        //if (Input.GetKeyDown(KeyCode.B))
-        //{
-        //    Managers.Scene.StartEndScene(false);
-        //}
-    }
     public void IncreaseViewer(int _amount, bool isPerfect = false)
     {
         viewer += _amount;
@@ -62,6 +49,8 @@ public class GameManager : MonoBehaviour
     private void Win()
     {
         CloseCurtain();
+
+        StartCoroutine(DelayClear(true));
     }
 
     private void Lose()
@@ -69,6 +58,8 @@ public class GameManager : MonoBehaviour
         bgmPlayer.Stop();
 
         CloseCurtain();
+
+        StartCoroutine(DelayClear(false));
     }
 
     private void CloseCurtain()
@@ -91,6 +82,13 @@ public class GameManager : MonoBehaviour
             _from.position = Vector3.Lerp(from, _to, time);
             yield return null;
         }
+    }
+
+    private IEnumerator DelayClear(bool _isWin)
+    {
+        yield return new WaitForSeconds(2f);
+
+        Managers.Scene.StartEndScene(_isWin);
     }
 
     public void SetSelectedProp(Prop _prop)

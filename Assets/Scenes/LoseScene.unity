@@ -769,7 +769,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The End
+  m_text: "\uC2E4\uD328\uD588\uC2B5\uB2C8\uB2E4"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: daa9c42195f764f4786308c081c4126f, type: 2}
   m_sharedMaterial: {fileID: -5334293296319602056, guid: daa9c42195f764f4786308c081c4126f, type: 2}

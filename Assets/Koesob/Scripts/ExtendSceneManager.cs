@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class ExtendSceneManager : MonoBehaviour
 {
+    private string result;
     public void Init()
     {
         Debug.Log("Scene Manager Init");
@@ -20,35 +21,14 @@ public class ExtendSceneManager : MonoBehaviour
 
     public void StartEndScene(bool _isWin)
     {
-        SceneManager.LoadScene("EndScene");
-
-        TextMeshProUGUI resultText = GameObject.Find("ResultText").GetComponent<TextMeshProUGUI>();
-
-        if (_isWin)
+        if(_isWin)
         {
-            resultText.text = "성공했습니다!";
+            SceneManager.LoadScene("WinScene");
         }
         else
         {
-            resultText.text = "실패했습니다!";
+            SceneManager.LoadScene("LoseScene");
         }
-    }
-
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    private void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
-    {
-        switch(_scene.name)
-        {
-            
-        }
+        
     }
 }
