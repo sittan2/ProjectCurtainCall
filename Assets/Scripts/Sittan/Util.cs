@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Data.Common;
 using UnityEngine;
-using static Define;
 
 public class Util
 {
