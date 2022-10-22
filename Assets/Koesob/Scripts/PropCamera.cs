@@ -6,7 +6,7 @@ public class PropCamera : Prop
 {
     public List<Vector3> rotations;
 
-    private void FixedUpdate()
+    private void Update()
     {
         transform.LookAt(new Vector3(0, 0,5));
     }
@@ -90,7 +90,7 @@ public class PropCamera : Prop
 
     public void On()
     {
-        Debug.Log("On");
+        
 
         string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "1";
 
