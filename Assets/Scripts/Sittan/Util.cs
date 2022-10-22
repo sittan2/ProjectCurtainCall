@@ -45,6 +45,7 @@ public class Util
     public static string TranslatePropToString(Define.PropType propType, int number)
     {
         string prop = "";
+        prop += $" {number}번";
         switch (propType)
         {
             case Define.PropType.Camera:
@@ -54,8 +55,6 @@ public class Util
                 prop += "조명";
                 break;
         }
-        prop += $" {number}번";
-
         return prop;
     }
 }

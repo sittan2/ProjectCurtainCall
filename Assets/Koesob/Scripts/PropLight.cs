@@ -15,6 +15,7 @@ public class PropLight : Prop
         string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "1";
 
         Managers.Task.DoCommand(command);
+        Managers.Sound.Play(Define.SoundType.LightOn);
     }
 
     public void Off()
@@ -26,5 +27,6 @@ public class PropLight : Prop
         string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "0";
 
         Managers.Task.DoCommand(command);
+        Managers.Sound.Play(Define.SoundType.LightOff);
     }
 }

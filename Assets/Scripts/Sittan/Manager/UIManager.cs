@@ -10,8 +10,9 @@ public class UIManager : MonoBehaviour
     GameManager Game;
 
     List<Action> actions;
-    [SerializeField] List<Button> UICommands = new List<Button>();
+    [SerializeField] List<UICommand> UICommands;
     [SerializeField] TextMeshProUGUI ViewerText;
+    [SerializeField] TextMeshProUGUI ComboText;
 
     [SerializeField] UITask UITask;
     [SerializeField] UIProp UIProp;
@@ -31,12 +32,14 @@ public class UIManager : MonoBehaviour
 
         actions = new List<Action>();
         GameObject.Find("Prop").GetComponentsInChildren<Prop>(true).ToList().ForEach(prop => AddPropButton(prop));
-        //GameObject.Find("Prop").GetComponentsInChildren<PropCamera>(true).ToList().ForEach(prop => AddCameraView(prop));
+        GameObject.Find("Prop").GetComponentsInChildren<PropCamera>(true).ToList().ForEach(prop => AddCameraView(prop));
+        OnCamera(1);
     }
 
     private void Update()
     {
         if (ViewerText != null) ViewerText.text = Managers.Game.viewer.ToString();
+        if (ComboText != null) ComboText.text = Managers.Game.combo.ToString();
 
         //for (int i = 0; i < 10; i++)
         //{
@@ -44,6 +47,9 @@ public class UIManager : MonoBehaviour
         //}
 
         //if (Input.GetKeyDown((KeyCode)49)) actions.FindIndex(1)
+
+
+
     }
 
     public UITask AddTaskUI(Task task)
@@ -55,51 +61,42 @@ public class UIManager : MonoBehaviour
 
     public void AddPropButton(Prop prop)
     {
-        var UIProp = Instantiate(this.UIProp, PropContent);
-        UIProp.SetData(prop, actions.Count + 1);
+        //var UIProp = Instantiate(this.UIProp, PropContent);
+        //UIProp.SetData(prop, actions.Count + 1);
 
-        Action action = prop.SetGameManagerProp;
-        actions.Add(action);
+        //Action action = prop.SetGameManagerProp;
+        //actions.Add(action);
     }
 
     public void AddCameraView(PropCamera prop)
     {
         var UICameraView = Instantiate(this.UICameraView, ViewContent);
         UICameraView.SetData(prop);
+        SubCameras.Add(UICameraView);
     }
 
-    public void OnCamera(PropCamera prop)
+    public void OnCamera(int num)
     {
-        int num = prop.Number;
-
         for (int i = 0; i < SubCameras.Count; i++)
         {
             if (i == num - 1)
             {
-                SubCameras[i].OnAir();
+                SubCameras[i].gameObject.SetActive(false);
                 mainCamera.SetTexture(SubCameras[i].GetTexture());
             }
             else
-                SubCameras[i].OffAir();
+                SubCameras[i].gameObject.SetActive(true);
         }
     }
 
     public void RefreshCommandUI(Prop prop)
     {
-        foreach (var UICommand in UICommands)
-        {
-            UICommand.onClick.RemoveAllListeners();
-            UICommand.GetComponentInChildren<TextMeshProUGUI>().text = "";
-        }
-
         if (prop != null)
         {
-            
             for (int i = 0; i < UICommands.Count; i++)
             {
                 int index = i;
-                UICommands[index].onClick.AddListener(() => prop.commands[index].command?.Invoke());
-                UICommands[index].GetComponentInChildren<TextMeshProUGUI>().text = prop.commands[index].commandName;
+                UICommands[index].SetData(prop.commands[index].commandName, () => prop.commands[index].command?.Invoke());
             }
         }
     }
