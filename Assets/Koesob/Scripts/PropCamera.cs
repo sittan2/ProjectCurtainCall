@@ -6,15 +6,25 @@ public class PropCamera : Prop
 {
     public List<Vector3> rotations;
 
+    private void FixedUpdate()
+    {
+        transform.LookAt(new Vector3(0, 0,5));
+    }
+
     public void ZoomIn()
     {
         var position = gameObject.transform.position;
 
-        position.z -= 10;
+        position.z += 2;
+
+        if (position.z >= -1)
+        {
+            position.z = -1;
+        }
 
         gameObject.transform.position = position;
 
-        string command = type + "_" + number + "_" + "Zoom" + "_" + "0";
+        string command = type + "_" + number + "_" + Define.ActionType.Zoom + "_" + "0";
 
         Managers.Task.DoCommand(command);
     }
@@ -23,50 +33,66 @@ public class PropCamera : Prop
     {
         var position = gameObject.transform.position;
 
-        position.z += 10;
+        position.z -= 2;
+
+        if (position.z <= -13)
+        {
+            position.z = -13;
+        }
 
         gameObject.transform.position = position;
 
-        string command = type + "_" + number + "_" + "Zoom" + "_" + "1";
+        string command = type + "_" + number + "_" + Define.ActionType.Zoom + "_" + "1";
 
         Managers.Task.DoCommand(command);
     }
 
     public void MoveToOne()
     {
-        gameObject.transform.position = positions[0];
-        gameObject.transform.rotation = Quaternion.Euler(rotations[0]);
+        StartCoroutine(MoveToPosition(transform, positions[0], 1f));
 
-        string command = type + "_" + number + "_" + "MoveTo" + "_" + "1";
+        string command = type + "_" + number + "_" + Define.ActionType.MoveTo + "_" + "1";
 
         Managers.Task.DoCommand(command);
     }
 
     public void MoveToTwo()
     {
-        gameObject.transform.position = positions[1];
-        gameObject.transform.rotation = Quaternion.Euler(rotations[1]);
+        StartCoroutine(MoveToPosition(transform, positions[1], 1f));
 
-        string command = type + "_" + number + "_" + "MoveTo" + "_" + "2";
+        string command = type + "_" + number + "_" + Define.ActionType.MoveTo + "_" + "2";
 
         Managers.Task.DoCommand(command);
     }
 
     public void MoveToThree()
     {
-        gameObject.transform.position = positions[2];
-        gameObject.transform.rotation = Quaternion.Euler(rotations[2]);
+        StartCoroutine(MoveToPosition(transform, positions[2], 1f));
 
-        string command = type + "_" + number + "_" + "MoveTo" + "_" + "3";
+        string command = type + "_" + number + "_" + Define.ActionType.MoveTo + "_" + "3";
 
         Managers.Task.DoCommand(command);
+    }
+
+    private IEnumerator MoveToPosition(Transform _from, Vector3 _to, float _timeToMove)
+    {
+        var from = _from.position;
+        var time = 0f;
+
+        while (time < 1)
+        {
+            time += Time.deltaTime / _timeToMove;
+
+            _from.position = Vector3.Lerp(from, _to, time);
+            yield return null;
+        }
     }
 
     public void On()
     {
         Debug.Log("On");
 
-        string command = type + "_" + number + "_" + "OnOff" + "_" + "1";
+        string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "1";
 
         Managers.Task.DoCommand(command);
     }

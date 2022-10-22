@@ -188,7 +188,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   positions: []
-  commands: []
+  commands:
+  - {fileID: 7015136029333110206}
+  - {fileID: 6170379547971864751}
+  - {fileID: 6335355915307561291}
+  - {fileID: 5012514636064720423}
+  - {fileID: 7125496181716815982}
+  - {fileID: 8104233544415949944}
+  - {fileID: 7015136029333110206}
+  - {fileID: 6170379547971864751}
+  - {fileID: 7729510280553518504}
   type: 2
   number: 1
 --- !u!114 &7526837087262828659

@@ -8,7 +8,7 @@ public class PropLight : Prop
     {
         Debug.Log("Light On");
 
-        string command = type + "_" + number + "_" + "On" + "_" + "1";
+        string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "1";
 
         Managers.Task.DoCommand(command);
     }
@@ -17,7 +17,7 @@ public class PropLight : Prop
     {
         Debug.Log("Light Off");
 
-        string command = type + "_" + number + "_" + "On" + "_" + "0";
+        string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "0";
 
         Managers.Task.DoCommand(command);
     }
