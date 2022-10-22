@@ -68,9 +68,9 @@ public class GameManager : MonoBehaviour
 
     private void CloseCurtain()
     {
-        curtain.transform.position = new Vector3(-6, 1, -8);
+        curtain.transform.position = new Vector3(-15, 0.5f, -4.5f);
 
-        StartCoroutine(MoveToPosition(curtain.transform, new Vector3(0, 1, -8), 1f));
+        StartCoroutine(MoveToPosition(curtain.transform, new Vector3(-2.5f, 0.5f, -4.5f), 1f));
     }
 
     private IEnumerator MoveToPosition(Transform _from, Vector3 _to, float _timeToMove)
