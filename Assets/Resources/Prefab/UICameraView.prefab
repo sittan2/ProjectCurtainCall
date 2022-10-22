@@ -165,7 +165,7 @@ GameObject:
   - component: {fileID: 8425679961976917231}
   - component: {fileID: 6366924770656276290}
   m_Layer: 5
-  m_Name: UISubCamera
+  m_Name: UICameraView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

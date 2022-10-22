@@ -567,12 +567,16 @@ MonoBehaviour:
   ViewerText: {fileID: 803442401677327700}
   UITask: {fileID: 3482791758851148560, guid: 4e97dedea48e35845810ab559eefda0c, type: 3}
   UIProp: {fileID: -8808538612561620619, guid: 984019e7011244f4b8286276118d61df, type: 3}
-  UICameraView: {fileID: 0}
+  UICameraView: {fileID: 6366924770656276290, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
   TaskContent: {fileID: 5618505748672968368}
   PropContent: {fileID: 1262176319934707042}
-  ViewContent: {fileID: 0}
-  mainCamera: {fileID: 0}
-  SubCameras: []
+  ViewContent: {fileID: 8736750675555485993}
+  mainCamera: {fileID: 8887921206063687249}
+  SubCameras:
+  - {fileID: 3710734813128008919}
+  - {fileID: 4090209907738879074}
+  - {fileID: 8120570791547122795}
+  - {fileID: 3246957134429745502}
 --- !u!1 &803442402956693792
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,6 +1943,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
   m_PrefabInstance: {fileID: 2523108050190739731}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8887921206063687249 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6366924770656276290, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+  m_PrefabInstance: {fileID: 2523108050190739731}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b6d61adc6644d4d835801896d01c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2657245327825423242
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2063,6 +2078,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UISubCamera (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8425679961976917229, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2158,6 +2177,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
   m_PrefabInstance: {fileID: 2948112024746228521}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8120570791547122795 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6366924770656276290, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+  m_PrefabInstance: {fileID: 2948112024746228521}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b6d61adc6644d4d835801896d01c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4666349227599385563
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2508,6 +2538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UISubCamera (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8425679961976917229, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2603,6 +2637,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
   m_PrefabInstance: {fileID: 6960458793647172384}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4090209907738879074 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6366924770656276290, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+  m_PrefabInstance: {fileID: 6960458793647172384}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b6d61adc6644d4d835801896d01c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7063132446115772104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2844,6 +2889,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UISubCamera
       objectReference: {fileID: 0}
+    - target: {fileID: 8425679961976917229, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2935,6 +2984,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
   m_PrefabInstance: {fileID: 7720561736770775957}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3710734813128008919 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6366924770656276290, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+  m_PrefabInstance: {fileID: 7720561736770775957}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b6d61adc6644d4d835801896d01c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8454485857452211740
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2945,6 +3005,10 @@ PrefabInstance:
     - target: {fileID: 8425679961976917229, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
       propertyPath: m_Name
       value: UISubCamera (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8425679961976917229, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
       propertyPath: m_Pivot.x
@@ -3041,6 +3105,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8425679961976917230, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
   m_PrefabInstance: {fileID: 8454485857452211740}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3246957134429745502 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6366924770656276290, guid: 2eb65cdb084ad6941a3f7d0a8087efd6, type: 3}
+  m_PrefabInstance: {fileID: 8454485857452211740}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b6d61adc6644d4d835801896d01c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8870291231825907794
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -90,10 +90,9 @@ public class PropCamera : Prop
 
     public void On()
     {
-        
-
         string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "1";
 
+        Managers.UI.OnCamera(this);
         Managers.Task.DoCommand(command);
     }
 }

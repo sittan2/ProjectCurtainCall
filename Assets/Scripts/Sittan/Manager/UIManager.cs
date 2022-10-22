@@ -68,6 +68,11 @@ public class UIManager : MonoBehaviour
         UICameraView.SetData(prop);
     }
 
+    public void OnCamera(PropCamera prop)
+    {
+
+    }
+
     public void RefreshCommandUI(Prop prop)
     {
         foreach (var UICommand in UICommands)

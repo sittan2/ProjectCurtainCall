@@ -22,7 +22,7 @@ public class UICameraView : MonoBehaviour
         return GetComponent<RawImage>().texture;
     }
 
-    internal void SetData(PropCamera prop)
+    public void SetData(PropCamera prop)
     {
         GetComponent<RawImage>().texture = prop.GetComponent<Camera>().targetTexture;
     }
