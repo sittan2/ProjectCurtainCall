@@ -54,6 +54,7 @@ public class TaskManager : MonoBehaviour
 
     public void SetTask(IReadOnlyDictionary<string, Task> tasks)
     {
+        this.tasks.Clear();
         foreach (var task in tasks.Values)
         {
             this.tasks.Add(task);
@@ -63,6 +64,6 @@ public class TaskManager : MonoBehaviour
 
     public void DoCommand(string command)
     {
-
+        Debug.Log(command);
     }
 }
