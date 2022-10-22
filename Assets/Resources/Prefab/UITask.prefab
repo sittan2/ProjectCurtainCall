@@ -263,7 +263,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 236446ac91e632f4b8c160e506a78190, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TextDescript: {fileID: 0}
+  image: {fileID: 1299364544850717542}
+  TextDescript: {fileID: 1299364544203185589}
+  scrollbar: {fileID: 1299364545494422517}
+  Task:
+    id: 
+    command: 
+    startTime: 0
+    intervalTime: 0
+    value: 0
+    propType: 0
+    number: 0
+    actionType: 0
+    parameter: 0
+    endTime: 0
+    isTasking: 0
+    isDone: 0
+    ui: {fileID: 0}
 --- !u!1 &1299364544916009401
 GameObject:
   m_ObjectHideFlags: 0

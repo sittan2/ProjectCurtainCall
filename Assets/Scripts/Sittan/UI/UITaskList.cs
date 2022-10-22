@@ -3,8 +3,7 @@ using UnityEngine;
 
 public class UITaskList : MonoBehaviour
 {
-    [SerializeField] UITask UITask;
-    [SerializeField] Transform Content;
+
 
     // Use this for initialization
     void Start()
@@ -20,6 +19,6 @@ public class UITaskList : MonoBehaviour
 
     public void AddTask(Task task)
     {
-        Instantiate(UITask, Content).SetData(task);
+        
     }
 }
