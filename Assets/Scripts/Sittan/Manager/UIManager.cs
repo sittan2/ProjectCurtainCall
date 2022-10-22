@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,17 +12,26 @@ public class UIManager : MonoBehaviour
     List<Action> actions;
     [SerializeField] List<Button> UICommands = new List<Button>();
     [SerializeField] TextMeshProUGUI ViewerText;
+
     [SerializeField] UITask UITask;
     [SerializeField] UIProp UIProp;
+    [SerializeField] UICameraView UICameraView;
+
 
     [SerializeField] Transform TaskContent;
     [SerializeField] Transform PropContent;
+    [SerializeField] Transform ViewContent;
+
+    [SerializeField] UICameraView mainCamera;
+    [SerializeField] List<UICameraView> SubCameras;
 
     public void Init()
     {
         Game = Managers.Game;
 
         actions = new List<Action>();
+        GameObject.Find("Prop").GetComponentsInChildren<Prop>(true).ToList().ForEach(prop => AddPropButton(prop));
+        GameObject.Find("Prop").GetComponentsInChildren<PropCamera>(true).ToList().ForEach(prop => AddCameraView(prop));
     }
 
     private void Update()
@@ -50,6 +60,12 @@ public class UIManager : MonoBehaviour
 
         Action action = prop.SetGameManagerProp;
         actions.Add(action);
+    }
+
+    public void AddCameraView(PropCamera prop)
+    {
+        var UICameraView = Instantiate(this.UICameraView, ViewContent);
+        UICameraView.SetData(prop);
     }
 
     public void RefreshCommandUI(Prop prop)

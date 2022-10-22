@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Prop : MonoBehaviour
@@ -12,9 +13,9 @@ public class Prop : MonoBehaviour
     public Define.PropType PropType => type;
     public int Number => number;
 
-    private void Start()
+    private void Awake()
     {
-        Managers.UI.AddPropButton(this);
+        commands = GetComponents<Command>().ToList();
     }
 
     public void SetGameManagerProp()

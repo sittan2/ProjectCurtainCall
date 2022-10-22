@@ -163,6 +163,7 @@ GameObject:
   - component: {fileID: 8425679961976917230}
   - component: {fileID: 8425679961976917216}
   - component: {fileID: 8425679961976917231}
+  - component: {fileID: 6366924770656276290}
   m_Layer: 5
   m_Name: UISubCamera
   m_TagString: Untagged
@@ -227,3 +228,16 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!114 &6366924770656276290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8425679961976917229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b6d61adc6644d4d835801896d01c10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ImageOnAir: {fileID: 5615698335192602590}
