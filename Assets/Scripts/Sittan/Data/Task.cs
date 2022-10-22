@@ -70,4 +70,24 @@ public class Task
         ui = null;
     }
 
+    public string GetDescript()
+    {
+        string prop = "";
+        switch (propType)
+        {
+            case Define.PropType.Camera:
+                prop = "카메라";
+                break;
+            case Define.PropType.Light:
+                prop = "조명";
+                break;
+        }
+
+        string num = " " + number.ToString() + " - ";
+
+        string action = Util.TranslateActionToString(ActionType, Parameter);
+
+        return prop + num + action;
+    }
+
 }

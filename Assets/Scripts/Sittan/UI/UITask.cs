@@ -20,7 +20,7 @@ public class UITask : MonoBehaviour
     {
         this.Task = task;
         this.scrollbar.size = 1;
-        this.TextDescript.text = task.Command;
+        this.TextDescript.text = task.GetDescript();
     }
 
     public void DoneTask()
