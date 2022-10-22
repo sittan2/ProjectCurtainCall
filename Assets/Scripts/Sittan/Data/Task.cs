@@ -14,6 +14,7 @@ public class Task
     [SerializeField] Define.ActionType actionType;
     [SerializeField] int parameter;
 
+    [SerializeField] float endTime;
 
     public Task(float startTime, float intervalTime, int value, Define.PropType propType, int number, Define.ActionType actionType, int parameter)
     {
@@ -24,10 +25,14 @@ public class Task
         this.number = number;
         this.actionType = actionType;
         this.parameter = parameter;
+
+        endTime = startTime + intervalTime;
     }
 
     public string Command => command;
     public float StartTime => startTime;
+    public float IntervalTime => intervalTime;
+    public float EndTime => endTime;
     public int Value => value;
     public Define.PropType PropType => propType;
     public int Number => number;
