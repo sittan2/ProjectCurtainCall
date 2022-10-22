@@ -47,13 +47,22 @@ public class TaskManager : MonoBehaviour
 
     public void DoCommand(string command)
     {
+        float currentTime = Managers.Game.bgmPlayer.time;
         foreach (var task in tasks)
         {
             if (!task.IsTasking) continue;
             if (task.IsDone) continue;
             if (task.Command.Equals(command))
             {
-                task.DoneTask();
+                if (task.JudgeTime <= currentTime && currentTime <= task.EndTime)
+                {
+                    task.PerfectDoneTask();
+                }
+                else
+                {
+                    task.DoneTask();
+                }
+
                 return;
             }
         }
