@@ -89,7 +89,14 @@ public class GameManager : MonoBehaviour
 
     public void SetSelectedProp(Prop _prop)
     {
-        selectedProp = _prop;
+        var preProp = selectedProp;
+
+        if(preProp != _prop)
+        {
+            selectedProp = _prop;
+
+            Managers.UI.RefreshCommandUI(selectedProp);
+        }
     }
 
     public void CancleProp()
