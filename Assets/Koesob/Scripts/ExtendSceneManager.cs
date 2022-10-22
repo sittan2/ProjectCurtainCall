@@ -34,5 +34,21 @@ public class ExtendSceneManager : MonoBehaviour
         }
     }
 
-    public void OnSceneLoaded
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene _scene, LoadSceneMode _mode)
+    {
+        switch(_scene.name)
+        {
+            
+        }
+    }
 }
