@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
         Debug.Log("GameManager Init");
 
         bgmPlayer.Play();
+
+        curtain.SetActive(false);
     }
 
     public void IncreaseViewer(int _amount)
@@ -33,24 +35,6 @@ public class GameManager : MonoBehaviour
         else
         {
             viewer = tempViewer;
-        }
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            Win();
-        }
-
-        if(Input.GetKeyDown(KeyCode.B))
-        {
-            Lose();
-        }
-
-        if (Input.GetKeyDown(KeyCode.C))
-        {
-            DecreaseVeiwer(50);
         }
     }
 
