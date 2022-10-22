@@ -101,6 +101,6 @@ public class GameManager : MonoBehaviour
 
     public void CancleProp()
     {
-        selectedProp = null;
+        SetSelectedProp(null);
     }
 }
