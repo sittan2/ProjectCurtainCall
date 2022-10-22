@@ -245,6 +245,8 @@ MonoBehaviour:
   - {fileID: 5143730171598161728}
   - {fileID: 8329796575195968081}
   - {fileID: 5583420094525976406}
+  type: 1
+  number: 1
   rotations:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}

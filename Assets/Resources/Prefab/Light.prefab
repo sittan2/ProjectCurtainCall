@@ -189,6 +189,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   positions: []
   commands: []
+  type: 2
+  number: 1
 --- !u!114 &7526837087262828659
 MonoBehaviour:
   m_ObjectHideFlags: 0
