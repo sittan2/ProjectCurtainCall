@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,14 +8,14 @@ public class UIManager : MonoBehaviour
 {
     GameManager Game;
     
-    [SerializeField] UITaskList UITaskList;
     [SerializeField] List<Button> UICommands = new List<Button>();
     [SerializeField] TextMeshProUGUI ViewerText;
+    [SerializeField] UITask UITask;
+    [SerializeField] Transform TaskContent;
 
     public void Init()
     {
         Game = Managers.Game;
-        CreateTask();
     }
 
     private void Update()
@@ -22,14 +23,11 @@ public class UIManager : MonoBehaviour
         if (ViewerText != null) ViewerText.text = Managers.Game.viewer.ToString();
     }
 
-    private void CreateTask()
+    public UITask AddTaskUI(Task task)
     {
-        var tasks = Managers.Data.GamePlayData.Tasks;
-
-        foreach (var task in tasks.Values)
-        {
-            UITaskList.AddTask(task);
-        }
+        var UITask = Instantiate(this.UITask, TaskContent);
+        UITask.SetData(task);
+        return UITask;
     }
 
     public void RefreshCommandUI(Prop prop)

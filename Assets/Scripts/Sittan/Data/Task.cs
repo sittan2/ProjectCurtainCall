@@ -16,8 +16,9 @@ public class Task
     [SerializeField] int parameter;
 
     [SerializeField] float endTime;
-    [SerializeField] public bool isTasking = false;
-    [SerializeField] public bool isDone = false;
+    [SerializeField] bool isTasking = false;
+    [SerializeField] bool isDone = false;
+    [SerializeField] UITask ui;
 
     public Task(string id, float startTime, float intervalTime, int value, Define.PropType propType, int number, Define.ActionType actionType, int parameter)
     {
@@ -44,4 +45,49 @@ public class Task
     public int Number => number;
     public Define.ActionType ActionType => actionType;
     public int Parameter => parameter;
+
+    public bool IsTasking => isTasking;
+    public bool IsDone => isDone;
+
+    public void OnTasking()
+    {
+        isTasking = true;
+        ui = Managers.UI.AddTaskUI(this);
+    }
+    public void DoneTask()
+    {
+        isDone = true;
+        Managers.Game.IncreaseViewer(Value);
+        ui.DoneTask();
+        ui = null;
+    }
+
+    public void FailTask()
+    {
+        isDone = true;
+        Managers.Game.DecreaseVeiwer(Value);
+        ui.FailTask();
+        ui = null;
+    }
+
+    public string GetDescript()
+    {
+        string prop = "";
+        switch (propType)
+        {
+            case Define.PropType.Camera:
+                prop = "카메라";
+                break;
+            case Define.PropType.Light:
+                prop = "조명";
+                break;
+        }
+
+        string num = " " + number.ToString() + " - ";
+
+        string action = Util.TranslateActionToString(ActionType, Parameter);
+
+        return prop + num + action;
+    }
+
 }

@@ -16,39 +16,21 @@ public class TaskManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-
-        }
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-
-        }
-
-
         float currentTime = Managers.Game.bgmPlayer.time;
         foreach (var task in tasks)
         {
-            if (task.isDone) continue;
+            if (task.IsDone) continue;
 
-            if (task.isTasking)
+            if (task.IsTasking)
             {
                 if (task.EndTime < currentTime)
                 {
-                    task.isDone = true;
-
-                    Debug.Log(task.Id + ", is Time Done");
-                    Managers.Game.DecreaseVeiwer(task.Value);
+                    task.FailTask();
                 }
             }
             else if (task.StartTime < currentTime)
             {
-                task.isTasking = true;
-                Debug.Log(task.Id + ", is Tasking");
+                task.OnTasking();
             }
         }
     }
@@ -65,18 +47,13 @@ public class TaskManager : MonoBehaviour
 
     public void DoCommand(string command)
     {
-        Debug.Log(command);
-
         foreach (var task in tasks)
         {
-            if (!task.isTasking) continue;
-            if (task.isDone) continue;
-
+            if (!task.IsTasking) continue;
+            if (task.IsDone) continue;
             if (task.Command.Equals(command))
             {
-                task.isDone = true;
-                Debug.LogError(task.Id + ", is Complete");
-                Managers.Game.IncreaseViewer(task.Value);
+                task.DoneTask();
                 return;
             }
         }
