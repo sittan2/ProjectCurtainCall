@@ -19,4 +19,9 @@ public class UITask : MonoBehaviour
     {
         
     }
+
+    public void SetData(Task task)
+    {
+
+    }
 }

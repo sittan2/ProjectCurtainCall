@@ -20,6 +20,6 @@ public class UITaskList : MonoBehaviour
 
     public void AddTask(Task task)
     {
-        Instantiate(UITask);
+        Instantiate(UITask, Content);
     }
 }

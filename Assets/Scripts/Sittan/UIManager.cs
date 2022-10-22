@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public void Init()
     {
         Game = Managers.Game;
+        CreateTask();
     }
 
     private void Update()
