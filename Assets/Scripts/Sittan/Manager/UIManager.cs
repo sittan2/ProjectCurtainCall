@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,6 +9,7 @@ public class UIManager : MonoBehaviour
     
     [SerializeField] UITaskList UITaskList;
     [SerializeField] List<Button> UICommands = new List<Button>();
+    [SerializeField] TextMeshProUGUI ViewerText;
 
     public void Init()
     {
@@ -20,7 +19,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-
+        if (ViewerText != null) ViewerText.text = Managers.Game.viewer.ToString();
     }
 
     private void CreateTask()
@@ -35,8 +34,6 @@ public class UIManager : MonoBehaviour
 
     public void RefreshCommandUI(Prop prop)
     {
-        Debug.Log(prop.name + ", " + prop.commands.Count);
-
         foreach (var UICommand in UICommands)
         {
             UICommand.onClick.RemoveAllListeners();
@@ -49,7 +46,6 @@ public class UIManager : MonoBehaviour
             for (int i = 0; i < UICommands.Count; i++)
             {
                 int index = i;
-                UICommands[index].onClick.AddListener(() => Debug.Log("Add"));
                 UICommands[index].onClick.AddListener(() => prop.commands[index].command?.Invoke());
                 UICommands[index].GetComponentInChildren<TextMeshProUGUI>().text = prop.commands[index].commandName;
             }

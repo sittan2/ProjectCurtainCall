@@ -42,6 +42,7 @@ public class TaskManager : MonoBehaviour
                     task.isDone = true;
 
                     Debug.Log(task.Id + ", is Time Done");
+                    Managers.Game.DecreaseVeiwer(task.Value);
                 }
             }
             else if (task.StartTime < currentTime)
@@ -65,5 +66,19 @@ public class TaskManager : MonoBehaviour
     public void DoCommand(string command)
     {
         Debug.Log(command);
+
+        foreach (var task in tasks)
+        {
+            if (!task.isTasking) continue;
+            if (task.isDone) continue;
+
+            if (task.Command.Equals(command))
+            {
+                task.isDone = true;
+                Debug.LogError(task.Id + ", is Complete");
+                Managers.Game.IncreaseViewer(task.Value);
+                return;
+            }
+        }
     }
 }

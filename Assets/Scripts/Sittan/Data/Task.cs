@@ -31,6 +31,7 @@ public class Task
         this.parameter = parameter;
 
         endTime = startTime + intervalTime;
+        command = PropType.ToString() + "_" + number + "_" + ActionType.ToString() + "_" + parameter;
     }
 
     public string Id => id;

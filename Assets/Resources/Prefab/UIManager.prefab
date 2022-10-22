@@ -575,6 +575,7 @@ MonoBehaviour:
   - {fileID: 1253645586264605311}
   - {fileID: 8504315918550663287}
   - {fileID: 8186367980700490212}
+  ViewerText: {fileID: 803442401677327700}
 --- !u!1 &803442402658288484
 GameObject:
   m_ObjectHideFlags: 0
