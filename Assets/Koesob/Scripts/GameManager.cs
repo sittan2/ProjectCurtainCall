@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public GameObject curtain;
     public int viewer;
+    public Prop selectedProp;
 
     public void Init()
     {
@@ -84,5 +85,10 @@ public class GameManager : MonoBehaviour
             _from.position = Vector3.Lerp(from, _to, time);
             yield return null;
         }
+    }
+
+    public void SetSelectedProp(Prop _prop)
+    {
+        selectedProp = _prop;
     }
 }
