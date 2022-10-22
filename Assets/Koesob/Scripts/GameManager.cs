@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public AudioSource bgmPlayer;
     public GameObject curtain;
     public int viewer;
+    public int combo = 0;
     public Prop selectedProp;
 
     public void Init()
@@ -21,11 +22,14 @@ public class GameManager : MonoBehaviour
     public void IncreaseViewer(int _amount)
     {
         viewer += _amount;
+        viewer += combo;
+        combo++;
     }
 
     public void DecreaseVeiwer(int _amount)
     {
         var tempViewer = viewer - _amount;
+        combo = 0;
 
         if(tempViewer <= 0)
         {

@@ -9,12 +9,12 @@ public class UICameraView : MonoBehaviour
 
     public void OnAir()
     {
-        ImageOnAir.gameObject.SetActive(true);
+        //ImageOnAir.gameObject.SetActive(true);
     }
 
     public void OffAir()
     {
-        ImageOnAir.gameObject.SetActive(false);
+        //ImageOnAir.gameObject.SetActive(false);
     }
 
     public Texture GetTexture()

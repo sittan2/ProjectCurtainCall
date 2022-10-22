@@ -35,6 +35,7 @@ public class PropCamera : Prop
         string command = type + "_" + number + "_" + Define.ActionType.Zoom + "_" + "0";
 
         Managers.Task.DoCommand(command);
+        Managers.Sound.Play(Define.SoundType.Lens);
     }
 
     public void ZoomOut()
@@ -55,6 +56,7 @@ public class PropCamera : Prop
         string command = type + "_" + number + "_" + Define.ActionType.Zoom + "_" + "1";
 
         Managers.Task.DoCommand(command);
+        Managers.Sound.Play(Define.SoundType.Lens);
     }
 
     public void MoveToOne()
@@ -64,6 +66,7 @@ public class PropCamera : Prop
         string command = type + "_" + number + "_" + Define.ActionType.MoveTo + "_" + "1";
 
         Managers.Task.DoCommand(command);
+        Managers.Sound.Play(Define.SoundType.Lens);
     }
 
     public void MoveToTwo()
@@ -73,6 +76,7 @@ public class PropCamera : Prop
         string command = type + "_" + number + "_" + Define.ActionType.MoveTo + "_" + "2";
 
         Managers.Task.DoCommand(command);
+        Managers.Sound.Play(Define.SoundType.Lens);
     }
 
     public void MoveToThree()
@@ -82,6 +86,7 @@ public class PropCamera : Prop
         string command = type + "_" + number + "_" + Define.ActionType.MoveTo + "_" + "3";
 
         Managers.Task.DoCommand(command);
+        Managers.Sound.Play(Define.SoundType.Lens);
     }
 
     private IEnumerator MoveToPosition(Transform _from, Vector3 _to, float _timeToMove)
@@ -102,7 +107,8 @@ public class PropCamera : Prop
     {
         string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "1";
 
-        Managers.UI.OnCamera(this);
+        Managers.UI.OnCamera(number);
         Managers.Task.DoCommand(command);
+        Managers.Sound.Play(Define.SoundType.CameraOn);
     }
 }

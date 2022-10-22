@@ -18,4 +18,19 @@ public class Define
         Rotation,
         Zoom
     }
+
+    public enum SoundType
+    {
+        none = 0,
+        ButtonClick = 10,
+        LightOn,
+        LightOff,
+        Lens,
+        CameraOn,
+        Combo1,
+        Combo2,
+        Biff,
+        GameOver1,
+        GameOver2,
+    }
 }

@@ -13,12 +13,14 @@ public class Managers : MonoBehaviour
     [SerializeField] private GameManager _game;
     [SerializeField] UIManager _uiManager;
     [SerializeField] TaskManager _taskManager;
+    [SerializeField] SoundManager _soundManager;
     private DataManager _dataManager = new DataManager();
 
     public static GameManager Game { get { return instance._game; } }
     public static UIManager UI { get { return instance._uiManager; } }
     public static DataManager Data { get { return instance._dataManager; } } 
     public static TaskManager Task { get { return instance._taskManager; } }
+    public static SoundManager Sound { get { return instance._soundManager; } }
 
     #endregion
 
