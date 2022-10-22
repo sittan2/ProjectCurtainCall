@@ -9,6 +9,14 @@ public class Prop : MonoBehaviour
     [SerializeField] protected Define.PropType type;
     [SerializeField] protected int number;
 
+    public Define.PropType PropType => type;
+    public int Number => number;
+
+    private void Start()
+    {
+        Managers.UI.AddPropButton(this);
+    }
+
     public void SetGameManagerProp()
     {
         Managers.Game.SetSelectedProp(this);

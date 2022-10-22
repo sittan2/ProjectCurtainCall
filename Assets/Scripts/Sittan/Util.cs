@@ -41,4 +41,21 @@ public class Util
         }
         return action;
     }
+
+    public static string TranslatePropToString(Define.PropType propType, int number)
+    {
+        string prop = "";
+        switch (propType)
+        {
+            case Define.PropType.Camera:
+                prop += "카메라";
+                break;
+            case Define.PropType.Light:
+                prop += "조명";
+                break;
+        }
+        prop += $" {number}번";
+
+        return prop;
+    }
 }
