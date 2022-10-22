@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PropLight : Prop
 {
+    [SerializeField] GameObject triangleLight;
     public void On()
     {
         Debug.Log("Light On");
