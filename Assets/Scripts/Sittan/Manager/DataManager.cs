@@ -142,6 +142,27 @@ public class DataManager
         }
     }
 
+    public static float ParseFloat(Dictionary<string, object> item, string header)
+    {
+        if (item.TryGetValue(header, out object value))
+        {
+            if (float.TryParse(value.ToString(), out float result))
+            {
+                return result;
+            }
+            else
+            {
+                Debug.Log("ParseFloat Default : " + header);
+                return 0;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("ParseFloat Header Error : " + header);
+            return 0;
+        }
+    }
+
     public static string ParseString(Dictionary<string, object> item, string header)
     {
         if (item.TryGetValue(header, out object value))
@@ -203,8 +224,14 @@ public class DataManager
             num++;
 
             float startTime = ParseInt(item, "startTime");
+            float intervalTime = ParseFloat(item, "intervalTime");
+            int value = ParseInt(item, "value");
+            var propType = ParseEnum<Define.PropType>(item, "propType");
+            int number = ParseInt(item, "number");
+            var actionType = ParseEnum<Define.ActionType>(item, "actionType");
+            int parameter = ParseInt(item, "parameter");
 
-            Task task = new(startTime);
+            Task task = new(startTime, intervalTime, value, propType, number, actionType, parameter);
 
             dic.Add(id, task);
         }

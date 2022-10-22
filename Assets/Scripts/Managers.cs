@@ -12,11 +12,13 @@ public class Managers : MonoBehaviour
     #region Managers
     [SerializeField] private GameManager _game;
     [SerializeField] UIManager _uiManager;
+    [SerializeField] TaskManager _taskManager;
     private DataManager _dataManager = new DataManager();
 
-    public static GameManager Game { get { return Instance._game; } }
-    public static UIManager UI { get { return Instance._uiManager; } }
-    public static DataManager Data { get { return Instance._dataManager; } } 
+    public static GameManager Game { get { return instance._game; } }
+    public static UIManager UI { get { return instance._uiManager; } }
+    public static DataManager Data { get { return instance._dataManager; } } 
+    public static TaskManager Task { get { return instance._taskManager; } }
 
     #endregion
 

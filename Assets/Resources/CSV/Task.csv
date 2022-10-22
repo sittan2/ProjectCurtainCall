@@ -4,7 +4,7 @@
 !,,,,,3 Rotation,,1122,,,,
 !,,,,,4 Zoom,,,,,,
 !,,,,,,,,,,,
-startTime,time,value,prop,number,action,parameter,,,,,
+startTime,intervalTime,value,propType,number,actionType,parameter,,,,,
 1,0.5,1,1,1,2,2,,,,,
 2,0.5,1,2,1,1,1,,,,,
 3,0.5,1,1,1,2,1,,,,,

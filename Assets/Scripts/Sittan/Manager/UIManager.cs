@@ -17,17 +17,7 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        
-    }
 
-    IEnumerable Tasking()
-    {
-        var tasks = Managers.Data.GamePlayData.Tasks;
-
-        while (true)
-        {
-
-        }
     }
 
     private void CreateTask()
