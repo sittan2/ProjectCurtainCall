@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
 
         actions = new List<Action>();
         GameObject.Find("Prop").GetComponentsInChildren<Prop>(true).ToList().ForEach(prop => AddPropButton(prop));
-        GameObject.Find("Prop").GetComponentsInChildren<PropCamera>(true).ToList().ForEach(prop => AddCameraView(prop));
+        //GameObject.Find("Prop").GetComponentsInChildren<PropCamera>(true).ToList().ForEach(prop => AddCameraView(prop));
     }
 
     private void Update()
@@ -70,7 +70,18 @@ public class UIManager : MonoBehaviour
 
     public void OnCamera(PropCamera prop)
     {
+        int num = prop.Number;
 
+        for (int i = 0; i < SubCameras.Count; i++)
+        {
+            if (i == num - 1)
+            {
+                SubCameras[i].OnAir();
+                mainCamera.SetTexture(SubCameras[i].GetTexture());
+            }
+            else
+                SubCameras[i].OffAir();
+        }
     }
 
     public void RefreshCommandUI(Prop prop)
