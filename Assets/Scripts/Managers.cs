@@ -15,12 +15,15 @@ public class Managers : MonoBehaviour
     [SerializeField] TaskManager _taskManager;
     [SerializeField] SoundManager _soundManager;
     private DataManager _dataManager = new DataManager();
+    [SerializeField] private ExtendSceneManager _scene;
 
     public static GameManager Game { get { return instance._game; } }
     public static UIManager UI { get { return instance._uiManager; } }
     public static DataManager Data { get { return instance._dataManager; } } 
     public static TaskManager Task { get { return instance._taskManager; } }
     public static SoundManager Sound { get { return instance._soundManager; } }
+
+    public static ExtendSceneManager Scene { get { return instance._scene; } }
 
     #endregion
 
@@ -47,6 +50,7 @@ public class Managers : MonoBehaviour
             Game.Init();
             UI.Init();
             Task.Init();
+            Scene.Init();
         }
     }
 

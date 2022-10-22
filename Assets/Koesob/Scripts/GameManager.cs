@@ -19,6 +19,19 @@ public class GameManager : MonoBehaviour
         curtain.SetActive(false);
     }
 
+
+    private void Update()
+    {
+        //if(Input.GetKeyDown(KeyCode.A))
+        //{
+        //    Managers.Scene.StartEndScene(true);
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.B))
+        //{
+        //    Managers.Scene.StartEndScene(false);
+        //}
+    }
     public void IncreaseViewer(int _amount)
     {
         viewer += _amount;
