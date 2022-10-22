@@ -275,7 +275,7 @@ Transform:
   - {fileID: 1756022938}
   - {fileID: 1992917074}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &383954871
 GameObject:
@@ -317,13 +317,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 383954871}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 566055982}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &469151535
 GameObject:
@@ -373,7 +373,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &566055980
 GameObject:
@@ -405,6 +405,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _game: {fileID: 383954872}
+  _uiManager: {fileID: 0}
 --- !u!4 &566055982
 Transform:
   m_ObjectHideFlags: 0
@@ -416,7 +417,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 383954873}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -502,7 +504,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &982187521
 GameObject:
@@ -570,7 +572,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1134739009
 GameObject:
@@ -1427,7 +1429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8941542708025626795, guid: c97b9de8c1b00af47a8f6ec93c7b08bc, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8941542708025626795, guid: c97b9de8c1b00af47a8f6ec93c7b08bc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1469,7 +1471,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6876118980064767433, guid: c97b9de8c1b00af47a8f6ec93c7b08bc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c97b9de8c1b00af47a8f6ec93c7b08bc, type: 3}
 --- !u!1 &3767554591367496284
 GameObject:
@@ -1628,7 +1631,7 @@ Transform:
   m_Children:
   - {fileID: 5945944574222211921}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6450179102597731118
 MonoBehaviour:
@@ -1790,7 +1793,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8960528567783469050}
         m_TargetAssemblyTypeName: Prop, Assembly-CSharp
         m_MethodName: SetGameManagerProp
         m_Mode: 1
@@ -1827,7 +1830,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6200471343275995604}
   - component: {fileID: 4369919312227499201}
-  - component: {fileID: 8463991744491064502}
   - component: {fileID: 8960528567783469050}
   - component: {fileID: 7230113904868193266}
   - component: {fileID: 3913832209097441561}
@@ -1845,14 +1847,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &8463991744491064502
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7984434073936189228}
-  m_Enabled: 1
 --- !u!1 &8631790665072903596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1899,6 +1893,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686c37a6f25763847a136646530fef3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  positions: []
+  commands: []
 --- !u!222 &9222610287708730568
 CanvasRenderer:
   m_ObjectHideFlags: 0

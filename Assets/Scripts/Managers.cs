@@ -11,7 +11,7 @@ public class Managers : MonoBehaviour
 
     #region Managers
     [SerializeField] private GameManager _game;
-    private UIManager _uiManager = new UIManager();
+    [SerializeField] UIManager _uiManager;
     private DataManager _dataManager = new DataManager();
 
     public static GameManager Game { get { return Instance._game; } }

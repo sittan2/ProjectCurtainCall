@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PropLight : MonoBehaviour
+public class PropLight : Prop
 {
     public void On()
     {
