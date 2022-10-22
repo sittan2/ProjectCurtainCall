@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -41,8 +42,7 @@ public class UIManager : MonoBehaviour
         for (int i = 0; i < UICommands.Count; i++)
         {
             UICommands[i].onClick.RemoveAllListeners();
-            //if (prop.commands[i].)
-            //UICommands[i].onClick.AddListener()
+            UICommands[i].onClick.AddListener(() => prop.commands[i].command.Invoke());
         }
     }
 }
