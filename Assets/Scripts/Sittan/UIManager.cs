@@ -4,13 +4,38 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    [SerializeField] GameManager Game;
-    [SerializeField] GameObject taskPrefab;
+    GameManager Game;
+    
+    [SerializeField] UITaskList UITaskList;
+
 
     public void Init()
     {
         Game = Managers.Game;
     }
 
-    
+    private void Update()
+    {
+        
+    }
+
+    IEnumerable Tasking()
+    {
+        var tasks = Managers.Data.GamePlayData.Tasks;
+
+        while (true)
+        {
+
+        }
+    }
+
+    private void CreateTask()
+    {
+        var tasks = Managers.Data.GamePlayData.Tasks;
+
+        foreach (var task in tasks.Values)
+        {
+            UITaskList.AddTask(task);
+        }
+    }
 }
