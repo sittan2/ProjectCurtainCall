@@ -6,5 +6,5 @@ using UnityEngine.Events;
 public class Command : MonoBehaviour
 {
     [SerializeField] public UnityEvent command;
-    [SerializeField] public string commandName;
+    [SerializeField] public string commandName = "";
 }

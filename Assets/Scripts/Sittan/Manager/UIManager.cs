@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -34,15 +35,24 @@ public class UIManager : MonoBehaviour
 
     public void RefreshCommandUI(Prop prop)
     {
+        Debug.Log(prop.name + ", " + prop.commands.Count);
+
         foreach (var UICommand in UICommands)
         {
             UICommand.onClick.RemoveAllListeners();
+            UICommand.GetComponentInChildren<TextMeshProUGUI>().text = "";
         }
 
-        for (int i = 0; i < UICommands.Count; i++)
+        if (prop != null)
         {
-            UICommands[i].onClick.RemoveAllListeners();
-            UICommands[i].onClick.AddListener(() => prop.commands[i].command.Invoke());
+            
+            for (int i = 0; i < UICommands.Count; i++)
+            {
+                int index = i;
+                UICommands[index].onClick.AddListener(() => Debug.Log("Add"));
+                UICommands[index].onClick.AddListener(() => prop.commands[index].command?.Invoke());
+                UICommands[index].GetComponentInChildren<TextMeshProUGUI>().text = prop.commands[index].commandName;
+            }
         }
     }
 }
