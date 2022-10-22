@@ -223,7 +223,7 @@ public class DataManager
             string id = "Task_" + num.ToString("0000");
             num++;
 
-            float startTime = ParseInt(item, "startTime");
+            float startTime = ParseFloat(item, "startTime");
             float intervalTime = ParseFloat(item, "intervalTime");
             int value = ParseInt(item, "value");
             var propType = ParseEnum<Define.PropType>(item, "propType");
@@ -231,7 +231,7 @@ public class DataManager
             var actionType = ParseEnum<Define.ActionType>(item, "actionType");
             int parameter = ParseInt(item, "parameter");
 
-            Task task = new(startTime, intervalTime, value, propType, number, actionType, parameter);
+            Task task = new(id, startTime, intervalTime, value, propType, number, actionType, parameter);
 
             dic.Add(id, task);
         }

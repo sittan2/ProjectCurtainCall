@@ -6,7 +6,7 @@ using UnityEngine;
 public class UITask : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI TextDescript;
-    
+    [SerializeField] Task Task;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,6 @@ public class UITask : MonoBehaviour
 
     public void SetData(Task task)
     {
-
+        this.Task = task;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine.Animations;
 [System.Serializable]
 public class Task
 {
+    [SerializeField] string id;
     [SerializeField] string command;
     [SerializeField] float startTime;
     [SerializeField] float intervalTime;
@@ -15,9 +16,12 @@ public class Task
     [SerializeField] int parameter;
 
     [SerializeField] float endTime;
+    [SerializeField] public bool isTasking = false;
+    [SerializeField] public bool isDone = false;
 
-    public Task(float startTime, float intervalTime, int value, Define.PropType propType, int number, Define.ActionType actionType, int parameter)
+    public Task(string id, float startTime, float intervalTime, int value, Define.PropType propType, int number, Define.ActionType actionType, int parameter)
     {
+        this.id = id;
         this.startTime = startTime;
         this.intervalTime = intervalTime;
         this.value = value;
@@ -29,6 +33,7 @@ public class Task
         endTime = startTime + intervalTime;
     }
 
+    public string Id => id;
     public string Command => command;
     public float StartTime => startTime;
     public float IntervalTime => intervalTime;

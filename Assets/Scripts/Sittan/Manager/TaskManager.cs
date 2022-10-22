@@ -1,11 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngineInternal;
 
 public class TaskManager : MonoBehaviour
 {
-    IReadOnlyDictionary<string, Task> tasks;
-    List<Task> currentTasks = new List<Task>();
+    [SerializeField] List<Task> tasks = new List<Task>();
+    //[SerializeField] List<Task> currentTasks = new List<Task>();
+
+    public void Init()
+    {
+        SetTask(Managers.Data.GamePlayData.Tasks);
+    }
 
     private void Update()
     {
@@ -26,15 +33,30 @@ public class TaskManager : MonoBehaviour
         float currentTime = Managers.Game.bgmPlayer.time;
         foreach (var task in tasks)
         {
-            //if ()
+            if (task.isDone) continue;
+
+            if (task.isTasking)
+            {
+                if (task.EndTime < currentTime)
+                {
+                    task.isDone = true;
+
+                    Debug.Log(task.Id + ", is Time Done");
+                }
+            }
+            else if (task.StartTime < currentTime)
+            {
+                task.isTasking = true;
+                Debug.Log(task.Id + ", is Tasking");
+            }
         }
     }
 
     public void SetTask(IReadOnlyDictionary<string, Task> tasks)
     {
-        if (tasks == null)
+        foreach (var task in tasks.Values)
         {
-            
+            this.tasks.Add(task);
         }
     }
 
