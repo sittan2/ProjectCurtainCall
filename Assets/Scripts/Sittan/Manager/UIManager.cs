@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
         GameObject.Find("Prop").GetComponentsInChildren<PropCamera>(true).ToList().ForEach(prop => AddCameraView(prop));
         OnCamera(1);
     }
+    
 
     private void Update()
     {
