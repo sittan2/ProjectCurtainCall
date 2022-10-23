@@ -38,9 +38,10 @@ public class UITask : MonoBehaviour
     void CalculateScrollbar()
     {
         var restTime = Task.EndTime - Managers.Game.bgmPlayer.time;
+        var totalTime = Task.EndTime - Task.StartTime;
         if (restTime > 0)
         {
-            var persent = restTime / Task.IntervalTime;
+            var persent = restTime / totalTime;
             scrollbar.size = persent;
             if (persent > 0.4f)
             {
