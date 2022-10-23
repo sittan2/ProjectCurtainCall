@@ -67,6 +67,7 @@ public class Task
         Managers.Game.IncreaseViewer(Value, true);
         ui.DoneTask();
         ui = null;
+        Debug.Log("Perfect");
     }
 
     public void DoneTask()
@@ -75,6 +76,7 @@ public class Task
         Managers.Game.IncreaseViewer(Value);
         ui.DoneTask();
         ui = null;
+        Debug.Log("Done");
     }
 
     public void FailTask()

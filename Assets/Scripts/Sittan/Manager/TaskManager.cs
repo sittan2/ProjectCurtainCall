@@ -54,7 +54,7 @@ public class TaskManager : MonoBehaviour
             if (task.IsDone) continue;
             if (task.Command.Equals(command))
             {
-                if (task.JudgeTime <= currentTime && currentTime <= task.EndTime)
+                if (task.JudgeTime <= currentTime && currentTime <= task.JudgeEndTime)
                 {
                     task.PerfectDoneTask();
                 }
