@@ -8,6 +8,7 @@ public class Define
         none = 0,
         Camera,
         Light,
+        Melon,
     }
 
     public enum ActionType
