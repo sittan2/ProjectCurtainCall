@@ -9,6 +9,17 @@ public class GameManager : MonoBehaviour
     public int viewer;
     public int combo = 0;
     public Prop selectedProp;
+    public float endTime;
+
+    private void Update()
+    {
+        float time = bgmPlayer.time;
+
+        if(time >= endTime)
+        {
+            Managers.Scene.StartEndScene(true);
+        }
+    }
 
     public void Init()
     {
@@ -17,6 +28,8 @@ public class GameManager : MonoBehaviour
         bgmPlayer.Play();
 
         curtain.SetActive(false);
+
+        endTime = bgmPlayer.maxDistance;
     }
 
     public void IncreaseViewer(int _amount, bool isPerfect = false)
