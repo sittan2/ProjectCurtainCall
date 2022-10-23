@@ -4,6 +4,17 @@ using UnityEngine;
 
 public class PropStove : Prop
 {
+    SpriteRenderer sprite;
+    Animator animator;
+
+    private void Start()
+    {
+        sprite = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+
+        animator.enabled = false;
+        sprite.enabled = false;
+    }
     public void On()
     {
         string command = type + "_" + number + "_" + Define.ActionType.OnOff + "_" + "1";
@@ -11,18 +22,18 @@ public class PropStove : Prop
         Managers.UI.OnCamera(number);
         Managers.Task.DoCommand(command);
 
-        gameObject.SetActive(true);
-    }
+        sprite.enabled = true;
+        animator.enabled = true;
 
-    private void OnEnable()
-    {
         StartCoroutine(DelayDeactive());
+
     }
 
     IEnumerator DelayDeactive()
     {
         yield return new WaitForSeconds(11f);
 
-        gameObject.SetActive(false);
+        animator.enabled = false;
+        sprite.enabled = false;
     }
 }

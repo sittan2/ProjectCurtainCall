@@ -10,6 +10,8 @@ public class PropCamera : Prop
     private void Start()
     {
         camera = GetComponent<Camera>();
+
+        transform.position = positions[0];
     }
 
     private void Update()
