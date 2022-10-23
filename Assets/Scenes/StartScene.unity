@@ -738,8 +738,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f00f13be3c1d60043bb72e46e8dd7556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutorialPannel: {fileID: 0}
-  sprites: []
+  tutorialPannel: {fileID: 1242692272}
+  sprites:
+  - {fileID: 21300000, guid: 97eb92ae7a9118e4d99286ef71565ee6, type: 3}
+  - {fileID: 21300000, guid: ddb9ee47498df894caabe6e95d364914, type: 3}
+  - {fileID: 21300000, guid: e14ca8b523ce7ef4792dd4b2d9f92a0f, type: 3}
+  currentIndex: 0
   image: {fileID: 2087791355}
 --- !u!4 &621008767
 Transform:
@@ -840,9 +844,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1222128197}
-        m_TargetAssemblyTypeName: ExtendSceneManager, Assembly-CSharp
-        m_MethodName: StartMainScene
+      - m_Target: {fileID: 621008766}
+        m_TargetAssemblyTypeName: TutorialManager, Assembly-CSharp
+        m_MethodName: OnTutorial
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1557,7 +1561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1242692273
 RectTransform:
   m_ObjectHideFlags: 0
