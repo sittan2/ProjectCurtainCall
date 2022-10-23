@@ -32,6 +32,8 @@ public class PropCamera : Prop
 
         camera.fieldOfView = view;
 
+        StartCoroutine(AdjustZoom(camera, view, 1f));
+
         string command = type + "_" + number + "_" + Define.ActionType.Zoom + "_" + "0";
 
         Managers.Task.DoCommand(command);
@@ -55,6 +57,7 @@ public class PropCamera : Prop
 
         string command = type + "_" + number + "_" + Define.ActionType.Zoom + "_" + "1";
 
+        StartCoroutine(AdjustZoom(camera, view, 1f));
         Managers.Task.DoCommand(command);
         Managers.Sound.Play(Define.SoundType.Lens);
     }
@@ -99,6 +102,20 @@ public class PropCamera : Prop
             time += Time.deltaTime / _timeToMove;
 
             _from.position = Vector3.Lerp(from, _to, time);
+            yield return null;
+        }
+    }
+
+    private IEnumerator AdjustZoom(Camera _from, float _to, float _timeToAdjust)
+    {
+        var from = _from.fieldOfView;
+        var time = 0f;
+
+        while (time < 1)
+        {
+            time += Time.deltaTime / _timeToAdjust;
+
+            _from.fieldOfView = Mathf.Lerp(from, _to, time);
             yield return null;
         }
     }

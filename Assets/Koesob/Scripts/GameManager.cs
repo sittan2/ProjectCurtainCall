@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
 
     private void Win()
     {
+        bgmPlayer.Stop();
+
         CloseCurtain();
 
         StartCoroutine(DelayClear(true));
