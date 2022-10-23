@@ -10,6 +10,7 @@ public class UITask : MonoBehaviour
     [SerializeField] TextMeshProUGUI TextDescript;
     [SerializeField] Scrollbar scrollbar;
     [SerializeField] Task Task;
+    [SerializeField] RectTransform judgeZone;
 
     void Update()
     {
@@ -51,6 +52,12 @@ public class UITask : MonoBehaviour
         }
         else
             scrollbar.size = 0;
+    }
 
+    void SetPerfectZone()
+    {
+        //var width = judgeZone.parent.
+        //var pos = judgeZone.localPosition;
+        //pos.x = 
     }
 }
